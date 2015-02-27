@@ -20,6 +20,10 @@ describe("PrimeFactors", function() {
 	it("sholud return true when number is 2", function() {
 		expect(primeFactors.isPrime(2)).toEqual(true);	
 	});
+
+  it('should return false when number is 15', function() {
+    expect(primeFactors.isPrime(15)).toEqual(false);
+  });
 /*
   describe("when song has been paused", function() {
     beforeEach(function() {
