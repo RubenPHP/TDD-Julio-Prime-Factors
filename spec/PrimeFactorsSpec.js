@@ -5,16 +5,21 @@ describe("PrimeFactors", function() {
     primeFactors = new PrimeFactors();
   });
  
- it('should return false when number is 4', function() {
+	it('should return false when number is 4', function() {
     expect(primeFactors.isPrime(4)).toEqual(false);
- });
+	});
 
   it("should return true when number is 5", function() {
 	  expect(primeFactors.isPrime(5)).toEqual(true);
   })
+	
   it('should return true when number is 3', function() {
-   expect(primeFactors.isPrime(3)).toEqual(true); 
+		expect(primeFactors.isPrime(3)).toEqual(true); 
   });
+		
+	it("sholud return true when number is 2", function() {
+		expect(primeFactors.isPrime(2)).toEqual(true);	
+	});
 /*
   describe("when song has been paused", function() {
     beforeEach(function() {

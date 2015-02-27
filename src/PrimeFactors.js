@@ -2,11 +2,11 @@ function PrimeFactors() {
 }
 
 PrimeFactors.prototype.isPrime = function(number){
-	var result = false
-	if(number==5){
-		result = true;
+	if(number%2 != 0){
+		return true;
+	} else {
+		return false;
 	}
-	return result;
 }
 
 /*
