@@ -2,7 +2,7 @@ function PrimeFactors() {
 }
 
 PrimeFactors.prototype.isPrime = function(number){
-	return 0;
+	return false;
 }
 
 /*
