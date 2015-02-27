@@ -5,6 +5,9 @@ describe("PrimeFactors", function() {
     primeFactors = new PrimeFactors();
   });
  
+ it('should return false when number is 4', function() {
+    expect(primeFactors.isPrime(4)).toEqual(false);
+ });
 
 /*
   describe("when song has been paused", function() {
