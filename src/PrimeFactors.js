@@ -1,10 +1,12 @@
+"use strict";
+
 function PrimeFactors() {
 }
 
-PrimeFactors.prototype.isPrime = function(number){	
+PrimeFactors.prototype.isPrime = function(number) {	
 	var isPrime = false;
 	
-	if(number%2 != 0 || number == 2){
+	if((number == 2 || number == 3) || number % 2 != 0 && number % 3 != 0) {
 		isPrime = true;
 	}
 
