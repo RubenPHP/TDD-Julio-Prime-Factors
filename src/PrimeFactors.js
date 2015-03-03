@@ -14,5 +14,9 @@ PrimeFactors.prototype.isPrime = function(number) {
 }
 
 PrimeFactors.prototype.isDivisible = function(number){
-	return  ((number%2==0)||(number%3==0)||(number%5==0)||(number%7==0));
+	var divisibles = [2,3,5,7,11];
+	
+	return divisibles.some(function(divisible){
+		return ((number%divisible)==0);
+	});
 }

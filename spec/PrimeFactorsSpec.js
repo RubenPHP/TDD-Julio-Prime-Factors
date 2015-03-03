@@ -38,4 +38,7 @@ describe("PrimeFactors", function() {
 	it('should return false when number is 121', function() {
     expect(primeFactors.isPrime(121)).toEqual(false);
   });
+  it('should return false when number is 169', function() {
+    expect(primeFactors.isPrime(169)).toEqual(false);    
+  });
 });
