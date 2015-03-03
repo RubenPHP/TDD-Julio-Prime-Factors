@@ -30,7 +30,12 @@ describe("PrimeFactors", function() {
 	it("shold return false when number is 49", function() {
 		expect(primeFactors.isPrime(49)).toEqual(false);			
 	});
-  it('should return false when number is 55', function() {
+  
+	it('should return false when number is 55', function() {
     expect(primeFactors.isPrime(55)).toEqual(false);
+  });
+	
+	it('should return false when number is 121', function() {
+    expect(primeFactors.isPrime(121)).toEqual(false);
   });
 });
