@@ -6,7 +6,7 @@ function PrimeFactors() {
 PrimeFactors.prototype.isPrime = function(number) {	
 	var isPrime = false;
 	
-	if((number == 2 || number == 3) ||!this.isDivisible(number)) {
+	if((number == 2 || number == 3 || number == 5) ||!this.isDivisible(number)) {
 		isPrime = true;
 	}
 
@@ -14,5 +14,5 @@ PrimeFactors.prototype.isPrime = function(number) {
 }
 
 PrimeFactors.prototype.isDivisible = function(number){
-	return  ((number%2==0)||(number%3==0)||(number%7==0));
+	return  ((number%2==0)||(number%3==0)||(number%5==0)||(number%7==0));
 }
