@@ -58,6 +58,10 @@ describe("PrimeFactors", function() {
 	it("should return [2,2] when number is 4", function() {
 		expect(primeFactors.getPrimeFactors(4)).toEqual([2,2]);
 	});
+
+  it('shuold return [2,3] when number is 6', function() {
+    expect(primeFactors.getPrimeFactors(6)).toEqual([2,3]);
+  });
 	
 	
 });
