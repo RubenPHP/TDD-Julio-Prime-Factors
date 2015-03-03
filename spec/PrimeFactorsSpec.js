@@ -1,6 +1,6 @@
 "use strict";
 
-describe("PrimeFactors", function() {  
+describe("PrimeNumber", function() {  
   var primeFactors;
 
   beforeEach(function() {    
@@ -38,7 +38,26 @@ describe("PrimeFactors", function() {
 	it('should return false when number is 121', function() {
     expect(primeFactors.isPrime(121)).toEqual(false);
   });
+	
   it('should return false when number is 169', function() {
     expect(primeFactors.isPrime(169)).toEqual(false);    
   });
+});
+
+describe("PrimeFactors", function() {  
+  var primeFactors;
+
+  beforeEach(function() {    
+    primeFactors = new PrimeFactors();
+  });
+ 
+  it('should return [2] when number is 2', function() {
+    expect(primeFactors.getPrimeFactors(2)).toEqual([2]);    
+  });
+	
+	it("should return [2,2] when number is 4", function() {
+		expect(primeFactors.getPrimeFactors(4)).toEqual([2,2]);
+	});
+	
+	
 });
