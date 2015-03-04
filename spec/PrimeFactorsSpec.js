@@ -94,5 +94,8 @@ describe("PrimeFactors", function() {
 	it('should return [2,2,2,5] when number is 40', function() {
     expect(primeFactors.getPrimeFactors(40)).toEqual([2,2,2,5]);
   });
-	
+
+  it('should return [11] when number is 121', function() {
+      expect(primeFactors.getPrimeFactors(121)).toEqual([11]);
+    });	
 });

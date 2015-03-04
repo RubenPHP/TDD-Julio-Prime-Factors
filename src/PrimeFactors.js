@@ -3,6 +3,27 @@
 function PrimeFactors() {
 }
 
+PrimeFactors.prototype.result = [];
+
+PrimeFactors.prototype.getPrimeFactors = function(number) {
+	this.result = this.isPrime(number) ? [number] : [];
+	
+	if(this.result.length == 0) {
+		var primeNumbers = [2,3,5,7];
+		for(var i=0; i<primeNumbers.length;i++){
+			var primeDivisor = primeNumbers[i],
+			remainder = this.pushPrime(number, primeDivisor);
+			
+			while(remainder) {
+				remainder = this.pushPrime(remainder, primeDivisor);
+			}
+		}
+	}
+	
+	return this.result;
+}
+
+
 PrimeFactors.prototype.isPrime = function(number) {	
 	var isPrime = true;
 	
@@ -11,34 +32,6 @@ PrimeFactors.prototype.isPrime = function(number) {
 	}
 
 	return isPrime;
-}
-
-PrimeFactors.prototype.result = [];
-
-PrimeFactors.prototype.getPrimeFactors = function(number) {
-	this.result = this.isPrime(number) ? [number] : [];
-		
-	if(this.result.length == 0) {
-		
-		var k;
-		
-		k = this.pushPrime(number, 2);
-		while(k) {
-			k = this.pushPrime(k, 2);
-		}
-		
-		k = this.pushPrime(number, 3);
-		while(k) {
-			k = this.pushPrime(k, 3);
-		}
-		
-		k = this.pushPrime(number, 7);
-		while(k) {
-			k = this.pushPrime(k, 7);
-		}
-	}
-	
-	return this.result;
 }
 
 PrimeFactors.prototype.pushPrime = function (number, divisor) {
