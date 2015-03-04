@@ -73,7 +73,14 @@ describe("PrimeFactors", function() {
 
   it('should return [2,2,2] when number is 8', function() {
     expect(primeFactors.getPrimeFactors(8)).toEqual([2,2,2]);
-    
+  });
+	
+	it('should return [2,2,3] when number is 12', function() {
+    expect(primeFactors.getPrimeFactors(12)).toEqual([2,2,3]);
+  });
+	
+	it('should return [2,3,3] when number is 18', function() {
+    expect(primeFactors.getPrimeFactors(18)).toEqual([2,3,3]);
   });
 	
 });

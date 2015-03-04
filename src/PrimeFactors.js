@@ -14,14 +14,39 @@ PrimeFactors.prototype.isPrime = function(number) {
 }
 
 PrimeFactors.prototype.getPrimeFactors = function(number) {
-	var result = this.isPrime(number) ? [number] : false;
-	if (!result)
+	var result = this.isPrime(number) ? [number] : [];
+	if (result.length == 0)
 	{
 		if (number%2==0) {		
-			result = [2, number/2];
+			result.push(2);
+			
+			var next = number / 2;
+			
+			if (next%2==0) {
+				result.push(2);
+				
+				var nextnext = next / 2;
+				
+				if (nextnext%2==0) {
+					result.push(2);
+				} else if (next%3==0) {
+					result.push(3);
+				}
+				
+			} else if (next%3==0) {
+				result.push(3);
+			}
 		} 
 		else if(number%3==0){
-			result = [3, 3]
+			result.push(3);
+			
+			var next = number / 3;
+			
+			if (next%2==0) {
+				result.push(2);
+			} else if (next%3==0) {
+				result.push(3);
+			}
 		}		
 	}
 	
