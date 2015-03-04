@@ -14,10 +14,14 @@ PrimeFactors.prototype.isPrime = function(number) {
 }
 
 PrimeFactors.prototype.getPrimeFactors = function(number) {
-	var result = [2];
-	if (number!=2) {		
-		result = [2,2];
-	};	
+	var result = [1];
+	if (number==2) {
+		result = [2];
+	} else if (number%2==0) {		
+		result = [2, number/2];
+	} else if (this.isPrime(number)) {
+		result = [number];
+	}	
 	return result;
 }
 

@@ -59,9 +59,16 @@ describe("PrimeFactors", function() {
 		expect(primeFactors.getPrimeFactors(4)).toEqual([2,2]);
 	});
 
-  it('shuold return [2,3] when number is 6', function() {
+  it('should return [2,3] when number is 6', function() {
     expect(primeFactors.getPrimeFactors(6)).toEqual([2,3]);
   });
 	
+	it('should return [7] when number is 7', function() {
+    expect(primeFactors.getPrimeFactors(7)).toEqual([7]);
+  });
+	
+	it('should return [3,3] when number is 9', function() {
+    expect(primeFactors.getPrimeFactors(9)).toEqual([3,3]);
+  });
 	
 });
