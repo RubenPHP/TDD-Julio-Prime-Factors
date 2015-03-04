@@ -95,7 +95,27 @@ describe("PrimeFactors", function() {
     expect(primeFactors.getPrimeFactors(40)).toEqual([2,2,2,5]);
   });
 
-  it('should return [11] when number is 121', function() {
-      expect(primeFactors.getPrimeFactors(121)).toEqual([11]);
-    });	
+  it('should return [11,11] when number is 121', function() {
+    expect(primeFactors.getPrimeFactors(121)).toEqual([11,11]);
+  });
+	
+	it('should return [13,13] when number is 169', function() {
+    expect(primeFactors.getPrimeFactors(169)).toEqual([13,13]);
+  });
+	
+	it('should return [2,61] when number is 122', function() {
+    expect(primeFactors.getPrimeFactors(122)).toEqual([2,61]);
+  });
+	
+	it('should return [2,3,5,7] when number is 210', function() {
+    expect(primeFactors.getPrimeFactors(210)).toEqual([2,3,5,7]);
+  });
+	
+	it('should return [2,2,2,2,2,2] when number is 64', function() {
+    expect(primeFactors.getPrimeFactors(64)).toEqual([2,2,2,2,2,2]);
+  });
+	
+	it('should return [997] when number is 997', function() {
+    expect(primeFactors.getPrimeFactors(997)).toEqual([997]);
+  });
 });

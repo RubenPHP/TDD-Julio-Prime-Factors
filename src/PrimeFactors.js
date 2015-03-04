@@ -9,8 +9,15 @@ PrimeFactors.prototype.getPrimeFactors = function(number) {
 	this.result = this.isPrime(number) ? [number] : [];
 	
 	if(this.result.length == 0) {
-		var primeNumbers = [2,3,5,7];
-		for(var i=0; i<primeNumbers.length;i++){
+		var primeNumbers = [];
+		
+		for(var k=2; k<number; k++) {
+			if(this.isPrime(k)) {
+				primeNumbers.push(k);
+			}
+		}
+		
+		for(var i=0; i<primeNumbers.length; i++){
 			var primeDivisor = primeNumbers[i],
 			remainder = this.pushPrime(number, primeDivisor);
 			
