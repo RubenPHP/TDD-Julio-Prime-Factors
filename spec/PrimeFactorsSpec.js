@@ -82,5 +82,9 @@ describe("PrimeFactors", function() {
 	it('should return [2,3,3] when number is 18', function() {
     expect(primeFactors.getPrimeFactors(18)).toEqual([2,3,3]);
   });
+
+  it('should return [2,2,7] when number is 28', function() {
+    expect(primeFactors.getPrimeFactors(28)).toEqual([2,2,7]);
+  });
 	
 });
