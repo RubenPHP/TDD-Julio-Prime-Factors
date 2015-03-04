@@ -13,41 +13,39 @@ PrimeFactors.prototype.isPrime = function(number) {
 	return isPrime;
 }
 
+PrimeFactors.prototype.result = [];
+
 PrimeFactors.prototype.getPrimeFactors = function(number) {
-	var result = this.isPrime(number) ? [number] : [];
-	if (result.length == 0)
-	{
-		if (number%2==0) {		
-			result.push(2);
-			
-			var next = number / 2;
-			
-			if (next%2==0) {
-				result.push(2);				
-				this.pushPrimeFactors(next,2,2,3, result);
-				
-			} else if (next%3==0) {
-				result.push(3);				
-				if (number>12){
-					this.pushPrimeFactors(number,3,3,3, result);
-				}
-			}
-		} 
-		else if(number%3==0){
-			result.push(3);
-			this.pushPrimeFactors(number,3,2,3, result);
-		}		
+	this.result = this.isPrime(number) ? [number] : [];
+		
+	if(this.result.length == 0) {
+		
+		var k;
+		
+		k = this.pushPrime(number, 2);
+		while(k) {
+			k = this.pushPrime(k, 2);
+		}
+		
+		k = this.pushPrime(number, 3);
+		while(k) {
+			k = this.pushPrime(k, 3);
+		}
+		
+		k = this.pushPrime(number, 7);
+		while(k) {
+			k = this.pushPrime(k, 7);
+		}
 	}
 	
-	return result;
+	return this.result;
 }
 
-PrimeFactors.prototype.pushPrimeFactors = function(number, divisor, prime1, prime2, result){
-	var nextnext = number / divisor;
-				
-	if (nextnext%prime1==0) {
-		result.push(prime1);
-	} else if (number%prime2==0) {
-		result.push(prime2);
+PrimeFactors.prototype.pushPrime = function (number, divisor) {
+	if(number % divisor == 0) {
+		this.result.push(divisor);
+		return number/divisor;
+	} else {
+		return false;
 	}
 }
