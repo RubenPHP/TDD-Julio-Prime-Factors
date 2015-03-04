@@ -118,4 +118,12 @@ describe("PrimeFactors", function() {
 	it('should return [997] when number is 997', function() {
     expect(primeFactors.getPrimeFactors(997)).toEqual([997]);
   });
+	
+	it('should return [49979687] when number is 49979687', function() {
+    expect(primeFactors.getPrimeFactors(49979687)).toEqual([49979687]);
+  });
+	
+	it('should return [5,19,163] when number is 15485', function() {
+    expect(primeFactors.getPrimeFactors(15485)).toEqual([5,19,163]);
+  });
 });
